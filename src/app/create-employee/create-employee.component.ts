@@ -9,6 +9,11 @@ import { Department } from '../models/department.model';
 })
 export class CreateEmployeeComponent implements OnInit {
   gender = 'male';
+  previewPhoto = false;
+
+  togglePhotoPreview() {
+    this.previewPhoto = !this.previewPhoto;
+  }
 
   departments: Department[] = [
     {id: 1,name: 'HelpDesk'},

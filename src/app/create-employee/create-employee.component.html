@@ -24,6 +24,17 @@
     <label>Date of Birth></label><br>
     <input id="dateOfBirth" name="dateOfBirth" [(ngModel)]="dateOfBirth" type="datetime-local" bsDatePicker><br><br>
 
+    <label>PhotoPath</label><br>
+    <input id="photoPath" type="text" name="photoPath" [(ngModel)]="photoPath"><br>
+    
+    <div>
+      <button type="button" (click)="togglePhotoPreview()">
+        {{ previewPhoto ? "Hide " : "Show "}} Preview
+        </button><br><br>
+      </div>
+
+
+
   <button type="submit">Save</button>
 
 </div>
