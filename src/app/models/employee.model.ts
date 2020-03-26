@@ -4,4 +4,7 @@ export class Employee {
   gender: string;
   email: string;
   phoneNumber: number;
+  dateOfBirth: string;
+  photoPath: string;
+  isActive: string;
 }

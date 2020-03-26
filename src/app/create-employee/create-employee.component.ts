@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { Department } from '../models/department.model';
+import { Employee } from '../models/employee.model';
+import { ListEmployeesComponent } from '../list-employees/list-employees.component';
 
 @Component({
   selector: 'app-create-employee',
@@ -10,6 +12,18 @@ import { Department } from '../models/department.model';
 export class CreateEmployeeComponent implements OnInit {
   gender = 'male';
   previewPhoto = false;
+
+  employees : Employee = {
+    id: null,
+    name: null,
+    gender: null,
+    email: null,
+    phoneNumber: null,
+    dateOfBirth: null,
+    photoPath: null,
+    isActive: null
+  };
+
 
   togglePhotoPreview() {
     this.previewPhoto = !this.previewPhoto;
@@ -27,8 +41,8 @@ export class CreateEmployeeComponent implements OnInit {
   ngOnInit() {
   }
 
-  saveForm(employeeForm: NgForm): void {
-    
+  saveForm(employeeForm: Employee): void {
+    console.log(employeeForm);
   }
 
 }

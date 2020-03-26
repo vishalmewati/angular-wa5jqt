@@ -1,20 +1,20 @@
-<form #employeeForm="ngForm" (ngSubmit)="saveForm(employeeForm)">
+<form #employeeForm="ngForm" (ngSubmit)="saveForm(employees)">
 <div >
   <label>FullName</label><br>
-  <input type="text" id="fullname" name="fullname" [(ngModel)]="FullName"><br>
+  <input type="text" id="name" name="name" [(ngModel)]="employees.name"><br>
 
   <label>Email</label><br>
-  <input type="text" id="email" name="email" [(ngModel)]="email"><br><br>
+  <input type="text" id="email" name="email" [(ngModel)]="employees.email"><br><br>
 
   <label>Gender</label><br>
   <label>Male
-  <input type="radio" value="male" name="gender" [(ngModel)]="gender" checked><br></label>
+  <input type="radio" value="male" name="gender" [(ngModel)]="employees.gender" checked><br></label>
   
   <label>Female
-  <input type="radio" value="female" name="gender" [(ngModel)]="gender"><br></label><br><br>
+  <input type="radio" value="female" name="gender" [(ngModel)]="employees.gender"><br></label><br><br>
 
   <label>
-    <input type="checkbox" name="isActive" [(ngModel)]="isActive">Is Active </label><br><br>
+    <input type="checkbox" name="isActive" [(ngModel)]="employees.isActive">Is Active </label><br><br>
 
   <label>Department</label><br>
   <select id="department" name="department" [(ngModel)]="department">
@@ -22,10 +22,10 @@
     </select><br><br>
 
     <label>Date of Birth></label><br>
-    <input id="dateOfBirth" name="dateOfBirth" [(ngModel)]="dateOfBirth" type="datetime-local" bsDatePicker><br><br>
+    <input id="dateOfBirth" name="dateOfBirth" [(ngModel)]="employees.dateOfBirth" type="datetime-local" bsDatePicker><br><br>
 
     <label>PhotoPath</label><br>
-    <input id="photoPath" type="text" name="photoPath" [(ngModel)]="photoPath"><br>
+    <input id="photoPath" type="text" name="photoPath" [(ngModel)]="employees.photoPath"><br>
     
     <div>
       <button type="button" (click)="togglePhotoPreview()">
@@ -40,4 +40,7 @@
 </div>
 </form><br>
 
-{{ employeeForm.value | json }}
+Angular generated form model : {{ employeeForm.value | json }}
+<br>
+<br>
+Employee Model : {{ employees | json}}
